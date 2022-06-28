@@ -196,6 +196,16 @@ const divisibleByThree = (str) =>
 //    spacey(['kevin', 'has','no','space']) => [ 'kevin', 'kevinhas', 'kevinhasno', 'kevinhasnospace']
 //    spacey(['this','cheese','has','no','holes']) => ['this','thischeese','thischeesehas','thischeesehasno','thischeesehasnoholes']
 
+const spacey = (arr) => {
+  let count = 0;
+  let res = [];
+  for (let i = 1; i <= arr.length; i++) {
+    res.push(arr.slice(count, i));
+  }
+
+  return res.map((item) => item.reduce((a, b) => a + b));
+};
+
 // Практика JS 19.
 // Если число четное, преобразуйте его в двоичное. Если число нечетное, преобразуйте его в шестнадцатеричное.
 
